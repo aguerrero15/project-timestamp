@@ -39,7 +39,7 @@ app.get("/api/:date?", function (req, res) {
   const date = req.params.date;
   if (date === undefined) {
     return res.json({
-      unix: Math.floor(Date.now() / 1000),
+      unix: Date.now(),
       utc: new Date(Date.now()).toUTCString()
     })
   }
