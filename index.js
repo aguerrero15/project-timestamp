@@ -23,7 +23,7 @@ app.get("/", function (req, res) {
 app.get("/api/:date(\\d+)", function (req, res) {
   const date = req.params.date;
 
-  const formattedDate = new Date(date)
+  const formattedDate = new Date(parseInt(date))
   if (formattedDate.toString() === 'Invalid Date') {
     return res.json({ error : "Invalid Date" })
   }
